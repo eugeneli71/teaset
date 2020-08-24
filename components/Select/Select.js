@@ -28,6 +28,7 @@ export default class Select extends Component {
     placeholder: PropTypes.string,
     placeholderTextColor: PropTypes.string,
     onSelected: PropTypes.func, //(item, index)
+    onShowPicker:PropTypes.func, // call as the same time when calling show picker
   };
 
   static defaultProps = {
@@ -155,6 +156,7 @@ export default class Select extends Component {
   }
 
   showPicker() {
+    onShowPicker()
     switch (this.props.pickerType) {
       case 'pull':
         this.showPullPicker();
