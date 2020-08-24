@@ -50,6 +50,7 @@ export default class SegmentedView extends Component {
   componentDidUpdate(prevProps) {
     if (prevProps.activeIndex != this.props.activeIndex && this.refs.carousel) {
       this.refs.carousel.scrollToPage(this.props.activeIndex);
+      this.setState({activeIndex:this.props.activeIndex});
     }
   }
 
