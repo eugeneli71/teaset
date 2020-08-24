@@ -156,7 +156,10 @@ export default class Select extends Component {
   }
 
   showPicker() {
-    onShowPicker()
+    if(this.props.onShowPicker){
+       this.props.onShowPicker()
+    }
+   
     switch (this.props.pickerType) {
       case 'pull':
         this.showPullPicker();
